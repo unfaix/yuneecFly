@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- Error Tips -->
+ 	
+ 	
+    <string name="is_error_undevelop">undevelop</string>
+    <string name="is_error_network">Network anomaly</string>
+    <string name="is_error_push_new_task">Network anomaly, can not push new task.</string>
+    <string name="is_error_story_low">The application runs in low memory</string>
+    <string name="is_error_disk_space_shorttage">Insufficient disk space</string>
+    <string name="is_error_wrong_info">Data response error</string>
+    <string name="is_error_userinfo_error">Missing parameter</string>
+    <string name="is_error_authentication_error">Authentication error</string>
+    <string name="is_error_not_find_resource">Could not find the requested resource</string>
+    <string name="is_error_500">Internal server abnormal</string>
+    <string name="is_error_json">JSON analysis of abnormal</string>
+    <string name="is_error_no_network">Unable to access the network</string>
+    <string name="is_error_get_resource_failure">Get resource failure</string>
+    <string name="is_error_no_resource">There are no any media</string>
+    <string name="is_error_sdcard">SDcard has not found</string>
+    <string name="is_error_init">Init Error</string>
+    <string name="is_error_to_export">There are no any picture to export</string>
+    
+    
+    
+</resources>

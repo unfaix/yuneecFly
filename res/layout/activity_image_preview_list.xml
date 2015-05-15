@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray95"
+    >
+
+        <RelativeLayout 
+            android:id="@+id/rl_album_container"
+	        android:layout_width="match_parent"
+	        android:layout_height="40dip"
+	        android:layout_marginBottom="8dip"
+	        >
+	        
+	         <View
+	            android:id="@+id/white_divider"
+	            android:layout_width="match_parent"
+	            android:layout_height="0.5dip"
+	            android:layout_alignParentBottom="true"
+	            android:background="@drawable/shape_white_line" 
+	            />
+	         
+	         <TextView 
+	              android:id="@+id/bt_finish"
+	              android:layout_width="wrap_content"
+	              android:layout_height="match_parent"
+	              android:text="@string/action_resource"
+	              android:drawableLeft="@drawable/cgo3_settings"
+	              android:drawablePadding="4dip"
+	              android:textSize="13sp"
+	              android:textColor="@android:color/white"
+	              android:gravity="center_vertical"
+	              android:paddingLeft="8dip"
+	              android:paddingRight="8dip"
+	             />
+	         
+	         <LinearLayout 
+	             android:layout_width="wrap_content"
+	             android:layout_height="match_parent"
+	             android:orientation="horizontal"
+	             android:layout_alignParentRight="true"
+	             >
+	             
+	             <Button 
+	                 android:id="@+id/bt_image"
+	                 android:layout_width="80dip"
+	                 android:layout_height="match_parent"
+	                 android:text="@string/image"
+	                 android:gravity="center"
+	                 android:textColor="@color/red"
+	                 android:background="@android:color/transparent"
+	                 />
+	             
+	             <Button 
+	                 android:id="@+id/bt_export"
+	                 android:layout_width="80dip"
+	                 android:layout_height="match_parent"
+	                 android:text="@string/export"
+	                 android:gravity="center"
+	                 android:textColor="@color/red"
+	                 android:background="@android:color/transparent"
+	                 />
+	             
+	             <Button 
+	                 android:id="@+id/bt_media"
+	                 android:layout_width="80dip"
+	                 android:layout_height="match_parent"
+	                 android:text="@string/media"
+	                 android:gravity="center"
+	                 android:textColor="@android:color/white"
+	                 android:background="@android:color/transparent"
+	                 android:visibility="gone"
+	                 />
+	             
+	         </LinearLayout>
+        
+    </RelativeLayout>
+    
+    <FrameLayout 
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_below="@id/rl_album_container"        
+        >
+    <ListView 
+        android:id="@+id/lv_image_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:listSelector="@drawable/com_pop_list_item_selector"
+        android:fastScrollEnabled="false"
+        />
+
+   
+    <TextView 
+        android:id="@+id/tv_download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:text="Download Manage"
+        android:textSize="13sp"
+        android:background="@drawable/shape_gray_round_rectangle"
+        android:padding="10dip"
+        android:layout_gravity="bottom|right"
+        android:visibility="gone"
+        />
+    
+    </FrameLayout>
+
+</RelativeLayout>

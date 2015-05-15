@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yuneec.android.flyingexpert"
+    android:versionCode="1"
+    android:versionName="0.1.0.0015" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="20" />
+
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    
+    
+    <application
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" 
+        android:allowBackup="true"
+        android:name=".settings.MyApplication"
+        >
+        <activity
+            android:name=".activity.SplashActivity"
+            android:label="@string/app_name" 
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            android:screenOrientation="landscape"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        
+         <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" 
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            />
+        
+        <activity
+            android:name=".activity.CameraActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" 
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            />
+        
+        
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" 
+            android:theme="@style/activity_translucent"
+            />
+        
+        
+        <activity
+            android:name=".activity.AboutActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" 
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            />
+        
+        <activity
+            android:name=".activity.ImagePreviewActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" 
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            />
+        
+        <activity
+            android:name=".activity.ImageDetailActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" 
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            />
+        
+        
+        <activity
+            android:name=".activity.DownloadManageActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" 
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            />
+        
+        
+        <!-- <activity
+            android:name=".activity.TestActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" 
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            /> -->
+        
+        <uses-library android:name="android.test.runner"/>
+        
+    </application>
+
+     <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="com.yuneec.android.flyingexpert" >
+    </instrumentation>
+    
+</manifest>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- wheelView -->
+    <declare-styleable name="AbstractWheelView">
+        <attr name="visibleItems" format="integer"/>
+        <attr name="isAllVisible" format="boolean"/>
+        <attr name="itemOffsetPercent" format="integer"/>
+        <attr name="itemsPadding" format="dimension"/>
+        <attr name="selectionDividerDimmedAlpha" format="integer"/>
+        <attr name="selectionDividerActiveAlpha" format="integer"/>
+        <attr name="selectionDivider" format="reference"/>
+        <attr name="itemsDimmedAlpha" format="integer"/>
+        <attr name="isCyclic" format="boolean"/>
+    </declare-styleable>
+    
+    <declare-styleable name="WheelVerticalView">
+        <attr name="selectionDividerHeight" format="dimension"/>
+    </declare-styleable>
+    
+    <declare-styleable name="WheelHorizontalView">
+        <attr name="selectionDividerWidth" format="dimension"/>
+    </declare-styleable>
+
+    <attr name="abstractWheelViewStyle" format="reference" />
+
+    <declare-styleable name="ShSwitchView">
+        <attr name="tintColor" format="reference|color" />
+        <attr name="outerStrokeWidth" format="reference|dimension" />
+        <attr name="shadowSpace" format="reference|dimension" />
+    </declare-styleable>
+
+
+</resources>

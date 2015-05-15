@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fllayout"
+    android:background="@drawable/cgo3_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    
+    
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="40dip"
+        android:layout_marginRight="40dip"
+        android:layout_marginBottom="10dip"
+        >
+        
+        <TextView 
+            android:id="@+id/tv_flight"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/flight"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:drawableTop="@drawable/flight"
+            />
+        
+         <TextView 
+            android:id="@+id/tv_study"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/study_manual"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:drawableTop="@drawable/manual"
+            />
+        
+         <TextView 
+            android:id="@+id/tv_resource"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/user_resource"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:drawableTop="@drawable/resource"
+            />
+         
+        <TextView 
+            android:id="@+id/tv_login"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/login"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:drawableTop="@drawable/home"
+            />
+        
+    </LinearLayout>
+    
+    
+    
+    <TextView 
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|top"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="15dip"
+        android:textColor="@android:color/white"
+        android:drawableLeft="@drawable/wifi"
+        android:drawablePadding="8dip"
+        android:text="@string/connecting"
+        android:textSize="12sp"
+        />
+    
+</FrameLayout>

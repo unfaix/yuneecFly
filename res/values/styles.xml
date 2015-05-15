@@ -1,0 +1,110 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:windowNoTitle">true</item>  
+    </style>
+    
+    
+    <style name="Theme.MyTheme" parent="android:style/Theme.Translucent">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    
+    
+    <style name="activity_translucent">  
+        <item name="android:windowNoTitle">true</item>  
+        <item name="android:windowBackground">@android:color/transparent</item>  
+        <item name="android:colorBackgroundCacheHint">@null</item>  
+        <item name="android:windowIsTranslucent">true</item>  
+        <!-- Note that we use the base animation style here (that is no  
+             animations) because we really have no idea how this kind of  
+             activity will be used. -->  
+    </style> 
+    
+    
+    
+    <!-- ProgressDialog -->
+    <style name="common_progress_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>  
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    
+    
+    <!-- ProgressBar -->
+     <style name="common_progress_bar" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal</item>
+    </style>
+    
+    
+    <!-- menu pop  animation -->
+    <style name="action_sheet_anim_style">
+		<item name="android:windowEnterAnimation">@anim/popview_sheet_show</item>
+		<item name="android:windowExitAnimation">@anim/popview_sheet_dismiss</item>
+	</style>
+    
+    
+    <!-- popview_wb_list_style -->
+    <style name="popview_wb_list_style">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textSize">12sp</item>
+		<item name="android:textColor">@android:color/white</item>
+		<item name="android:gravity">center_horizontal</item>
+		<item name="android:paddingTop">8dip</item>
+		<item name="android:paddingBottom">8dip</item>
+		<item name="android:background">@drawable/com_pop_list_item_selector</item>
+	</style>
+	
+    
+    <!-- settings options style -->
+    
+    <style name="settings_options_style">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">40dip</item>
+		<item name="android:textSize">13sp</item>
+		<item name="android:textColor">@android:color/white</item>
+		<item name="android:gravity">center_vertical|left</item>
+		<item name="android:paddingLeft">10dip</item>
+		<item name="android:background">@drawable/com_item_bg_selector</item>
+	</style>
+	
+    
+     <!-- settings options style -->
+    
+    <style name="settings_sub_options_style">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">40dip</item>
+		<item name="android:textSize">13sp</item>
+		<item name="android:textColor">@android:color/white</item>
+		<item name="android:gravity">center_vertical|left</item>
+		<item name="android:paddingLeft">8dip</item>
+	</style>
+    
+    
+     <!-- divider line style -->
+    
+    <style name="divider_line_style">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">0.5dip</item>
+		<item name="android:background">@drawable/shape_white_line</item>
+	</style>
+    
+    
+
+</resources>

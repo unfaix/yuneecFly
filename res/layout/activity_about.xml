@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray95"
+    android:orientation="vertical"
+    >
+    
+	
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        >
+    
+        
+        <ImageView 
+            android:id="@+id/about_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/company"
+            android:layout_centerInParent="true"
+            />
+        
+        <TextView 
+            android:id="@+id/tv_version_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@android:color/black"
+            android:layout_toRightOf="@id/about_company"
+            android:layout_alignTop="@id/about_company"
+            />
+        
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/about_company"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            >
+        
+        <TextView 
+            android:id="@+id/tv_model_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@android:color/black"
+            />
+        
+        <TextView 
+            android:id="@+id/tv_yuneec_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@android:color/black"
+            android:layout_marginLeft="8dip"
+            />
+	    
+        </LinearLayout>
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@android:color/black"
+            android:text="@string/version_info"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dip"
+            />
+	    
+    </RelativeLayout>
+    
+</LinearLayout>

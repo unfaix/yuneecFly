@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.yuneec.android.flyingexpert"
+    android:layout_width="80dip"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" 
+    >
+
+    
+    
+    <ImageView
+        android:id="@+id/iv_iso_manual_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dip"
+        android:src="@drawable/cgo3_manual" />
+    
+    
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:text="ISO"
+        android:textColor="@android:color/white"
+        android:textSize="13sp"
+        android:textStyle="bold" 
+        />
+
+    
+    <com.yuneec.android.flyingexpert.library.wheelview.WheelVerticalView
+         android:id="@+id/wv_iso_value"
+         android:layout_width="65dip"
+         android:layout_height="100dip" 
+         android:layout_marginTop="10dip"
+         android:layout_marginBottom="10dip"
+         android:gravity="center"
+         app:selectionDivider="@drawable/divider_dark_gradient_horizontal"
+         app:selectionDividerActiveAlpha="100"
+         app:selectionDividerDimmedAlpha="255"
+         app:selectionDividerHeight="1px"
+         app:visibleItems="3" />
+
+
+    
+     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:text="ShutterTime"
+        android:textColor="@android:color/white"
+        android:textSize="13sp"
+        android:textStyle="bold" 
+        />
+
+    
+    <com.yuneec.android.flyingexpert.library.wheelview.WheelVerticalView
+         android:id="@+id/wv_shutter_time_value"
+         android:layout_width="65dip"
+         android:layout_height="100dip" 
+         android:layout_marginTop="10dip"
+         android:layout_marginBottom="10dip"
+         android:gravity="center"
+         app:selectionDivider="@drawable/divider_dark_gradient_horizontal"
+         app:selectionDividerActiveAlpha="100"
+         app:selectionDividerDimmedAlpha="255"
+         app:selectionDividerHeight="1px"
+         app:visibleItems="3" />
+    
+    
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="56dip"
+	android:padding="8dip"
+	>
+
+    
+    
+    <FrameLayout 
+        android:id="@+id/fl_pic_container"
+        android:layout_width="60dip"
+        android:layout_height="40dip"
+        android:layout_alignParentLeft="true"
+        android:background="#CCC"
+        >
+        
+        <ImageView
+			android:id="@+id/iv_pic_photo"
+			android:layout_width="60dip"
+			android:layout_height="40dip"
+			android:adjustViewBounds="true"
+			android:scaleType="fitXY"
+			/>
+
+		<ProgressBar
+			android:id="@+id/pb_pic_progress"
+			android:layout_width="match_parent"
+			android:layout_height="2dip"
+			android:indeterminate="false"
+			android:max="100"
+			android:layout_gravity="bottom"
+			style="@style/common_progress_bar" 
+			/>
+        
+    </FrameLayout>
+    
+    
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/fl_pic_container"
+        android:layout_marginLeft="8dip"
+        android:layout_centerVertical="true"
+        >
+        
+        <TextView 
+            android:id="@+id/tv_pic_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/is_getting"
+            android:textColor="@android:color/white"
+            android:textSize="13sp"
+            />
+        
+        
+        <TextView 
+            android:id="@+id/tv_pic_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/is_getting"
+            android:textColor="@android:color/white"
+            android:textSize="13sp"
+            android:layout_marginTop="4dip"
+            />
+        
+    </LinearLayout>
+    
+	<TextView 
+         android:id="@+id/tv_pic_size"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/is_getting"
+         android:textColor="@android:color/white"
+         android:textSize="13sp"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentRight="true"
+         />
+    
+</RelativeLayout>

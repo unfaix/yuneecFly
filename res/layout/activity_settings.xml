@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray95"
+    android:orientation="vertical"
+    >
+    
+    
+    
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        >
+        
+         <View
+            android:id="@+id/white_divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dip"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/shape_white_line" 
+            />
+         
+         <TextView 
+              android:id="@+id/bt_finish"
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:text="@string/settings"
+              android:drawableLeft="@drawable/cgo3_settings"
+              android:drawablePadding="4dip"
+              android:textSize="13sp"
+              android:textColor="@android:color/white"
+              android:gravity="center_vertical"
+              android:paddingLeft="8dip"
+              android:paddingRight="8dip"
+             />
+        
+    </RelativeLayout>
+	
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white25"
+        >
+    
+        <!-- settings_left_sub -->
+	    <ScrollView 
+	        android:id="@+id/settings_left_sub"
+	        android:layout_width="200dip"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginTop="40dip"
+	        android:background="#40FFFFFF"
+	        >
+	        
+	        <LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical"
+	            >
+	            
+	            
+	             <TextView 
+	                android:id="@+id/bt_resolution"
+		            android:text="@string/resolution_settings"
+		            style="@style/settings_options_style"
+		            android:layout_marginTop="0dip"
+		            />
+	             
+	             
+	              <View style="@style/divider_line_style" />
+	             
+	              
+	             <TextView 
+	                android:id="@+id/bt_hue"
+		            android:text="@string/hue_settings"
+		            style="@style/settings_options_style"
+		            />
+	             
+	             <View style="@style/divider_line_style" />
+	             
+	              <TextView 
+	                android:id="@+id/bt_photo_format"
+		            android:text="@string/photo_settings"
+		            style="@style/settings_options_style"
+		            />
+	             
+	             <View style="@style/divider_line_style" />
+	             
+	              <TextView 
+	                android:id="@+id/bt_audio_settings"
+		            android:text="@string/audio_settings"
+		            style="@style/settings_options_style"
+		            />
+	             
+	             <View style="@style/divider_line_style" />
+	             
+	             <TextView 
+	                android:id="@+id/bt_reset"
+		            android:text="@string/reset"
+		            style="@style/settings_options_style"
+		            />
+	             
+	             <View style="@style/divider_line_style" />
+	             
+	             <TextView 
+	                android:id="@+id/bt_format"
+		            android:text="@string/format"
+		            style="@style/settings_options_style"
+		            />
+	             
+	             <View style="@style/divider_line_style" />
+	             
+	             <TextView 
+	                android:id="@+id/bt_about"
+		            android:text="@string/about"
+		            style="@style/settings_options_style"
+		            />
+	            
+	        </LinearLayout>
+	        
+	    </ScrollView>
+    
+	    <View 
+	        android:id="@+id/settings_divider_line"
+	        android:layout_width="1dip"
+	        android:layout_height="match_parent"
+	        android:background="@drawable/shape_gray_vertical_line"
+	       	android:layout_toRightOf="@id/settings_left_sub"
+	        />
+	    
+	    <LinearLayout 
+	        android:id="@+id/settings_right_sub"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	        android:layout_alignParentRight="true"
+	        android:layout_toRightOf="@id/settings_divider_line"
+	        >
+	        
+	        
+	        <TextView 
+	            android:id="@+id/tv_settings_title"
+	            android:layout_width="match_parent"
+	            android:layout_height="40dip"
+	            android:text="Title"
+	            android:textSize="13sp"
+	            android:textColor="@android:color/white"
+	            android:gravity="center"
+	            android:layout_gravity="center_horizontal"
+	            />
+	        
+	        
+	        <LinearLayout 
+	            android:id="@+id/settings_container"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:orientation="vertical"
+	            android:paddingRight="8dip"
+	            />
+	        
+	    </LinearLayout>
+	    
+	    
+    </RelativeLayout>
+    
+</LinearLayout>

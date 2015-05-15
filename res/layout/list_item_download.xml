@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="60dip"
+	android:padding="8dip"
+	android:orientation="horizontal"
+	>
+
+    
+    
+    <FrameLayout 
+        android:id="@+id/fl_pic_container"
+        android:layout_width="80dip"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:background="#CCC"
+        >
+        
+        <ImageView
+			android:id="@+id/iv_pic_photo"
+			android:layout_width="80dip"
+			android:layout_height="match_parent"
+			android:adjustViewBounds="true"
+			android:scaleType="fitXY"
+			android:background="@drawable/cgo3_media"
+			/>
+
+		<ProgressBar
+			android:id="@+id/pb_pic_progress"
+			android:layout_width="match_parent"
+			android:layout_height="2dip"
+			android:indeterminate="false"
+			android:max="100"
+			android:layout_gravity="bottom"
+			style="@style/common_progress_bar" 
+			android:visibility="gone"
+			/>
+        
+    </FrameLayout>
+    
+    
+    <RelativeLayout 
+        android:id="@+id/rl_cmd_container"
+        android:layout_width="120dip"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        >
+        
+        <TextView 
+            android:id="@+id/tv_download_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/green"
+            android:text="@string/is_getting"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:textStyle="bold"
+            />
+        
+        <Button 
+            android:id="@+id/bt_download_start"
+            android:layout_width="55dip"
+            android:layout_height="30dip"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/cgo3_download_start"
+            />
+        
+        <Button 
+            android:id="@+id/bt_download_pause"
+            android:layout_width="55dip"
+            android:layout_height="30dip"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/cgo3_download_pause"
+            android:visibility="gone"
+            />
+        
+    </RelativeLayout>
+    
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/fl_pic_container"
+        android:layout_toLeftOf="@id/rl_cmd_container"
+        android:layout_marginLeft="8dip"
+        android:layout_marginRight="8dip"
+        >
+        
+        <TextView 
+            android:id="@+id/tv_file_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@android:color/white"
+            android:text="@string/is_getting"
+            android:layout_alignParentTop="true"
+            />
+        
+        <ProgressBar 
+            android:id="@+id/pb_download_progress"
+            android:layout_width="match_parent"
+            android:layout_height="8dip"
+            style="@style/common_progress_bar" 
+            android:layout_alignParentBottom="true"
+            />
+        
+        <TextView 
+            android:id="@+id/tv_complete_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/green"
+            android:text="@string/is_getting"
+            android:layout_above="@id/pb_download_progress"
+            android:layout_marginBottom="3dip"
+            />
+        
+    </RelativeLayout>
+    
+    
+    
+</RelativeLayout>

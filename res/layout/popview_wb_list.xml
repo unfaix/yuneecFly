@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="80dip"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:scrollbars="none"
+    >
+
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        >
+    
+    
+    <Button 
+        android:id="@+id/bt_wb_awb"
+        android:drawableTop="@drawable/cgo3_awb"
+        android:text="@string/auto"
+        style="@style/popview_wb_list_style"
+        />
+    
+    <Button 
+        android:id="@+id/bt_wb_lock"
+        android:drawableTop="@drawable/cgo3_lock"
+        android:text="@string/lock"
+        style="@style/popview_wb_list_style"
+        />
+    
+    <Button 
+        android:id="@+id/bt_wb_daylight"
+        android:drawableTop="@drawable/cgo3_sensitometry"
+        android:text="@string/daylight"
+        style="@style/popview_wb_list_style"
+        />
+    
+    <Button 
+        android:id="@+id/bt_wb_cloudy"
+        android:drawableTop="@drawable/cgo3_cloudy"
+        android:text="@string/cloudy"
+        style="@style/popview_wb_list_style"
+        />
+    
+    <Button 
+        android:id="@+id/bt_wb_flucrescent"
+        android:drawableTop="@drawable/cgo3_flucrescent"
+        android:text="@string/flucrescent"
+        style="@style/popview_wb_list_style"
+        />
+    
+    <Button 
+        android:id="@+id/bt_wb_incandescent"
+        android:drawableTop="@drawable/cgo3_incandescent"
+        android:text="@string/incandescent"
+        style="@style/popview_wb_list_style"
+        />
+    <Button 
+        android:id="@+id/bt_wb_sunset"
+        android:drawableTop="@drawable/cgo3_sunset"
+        android:text="@string/sunset_sunrise"
+        style="@style/popview_wb_list_style"
+        />
+	<Button 
+        android:id="@+id/bt_wb_custom"
+        android:drawableTop="@drawable/cgo3_custom"
+        android:text="@string/custom"
+        style="@style/popview_wb_list_style"
+        android:visibility="gone"
+        />
+	
+    </LinearLayout>
+
+</ScrollView>
