@@ -9,7 +9,7 @@ package com.yuneec.android.flyingexpert.settings;
  */
 public interface AppConfig {
 
-	public static boolean developerMode = false;
+	public static boolean developerMode = true;
 
 	public static final String APP_ID = "11";
 

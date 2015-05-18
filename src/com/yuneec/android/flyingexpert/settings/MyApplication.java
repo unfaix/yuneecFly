@@ -24,7 +24,7 @@ import android.content.Context;
 
 
 /**
- * Init project variable
+ * Init Project Variable
  * @author yongdaimi
  * @remark 
  * @date 2014-10-9 上午10:13:47
