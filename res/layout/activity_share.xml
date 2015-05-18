@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    
+    <TextView
+       android:id="@+id/tv_share"
+       android:layout_width="match_parent"
+       android:layout_height="39dip"
+       android:text="@string/share_to" 
+       android:textSize="16sp"
+       android:textStyle="italic"
+       android:gravity="center_vertical"
+       android:paddingLeft="30dip"
+       android:layout_alignParentTop="true"
+       android:textColor="@android:color/white"
+       />
+    
+    <View
+        android:id="@+id/white_divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dip"
+        android:background="@drawable/shape_white_line" 
+        android:layout_below="@id/tv_share"
+        />
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/white_divider"
+        >
+        
+        <GridView 
+	       android:id="@+id/gv_item"
+	       android:layout_width="match_parent"
+	       android:layout_height="wrap_content"
+	       android:columnWidth="90dip"
+	       android:gravity="center"
+	       android:verticalSpacing="32dip"
+	       android:horizontalSpacing="8dip"
+	       android:numColumns="auto_fit"
+	       android:stretchMode="columnWidth"
+	       android:listSelector="@android:color/transparent"
+	       android:scrollbars="none"
+	       android:layout_centerInParent="true"
+	       />
+        
+    </RelativeLayout>
+
+</RelativeLayout>

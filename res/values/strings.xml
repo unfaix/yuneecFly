@@ -55,6 +55,8 @@
     <string name="reset">Reset </string>
     <string name="format">Format SDcard </string>
     <string name="about">About </string>
+    <string name="share">Share this App</string>
+    <string name="share_to">Share To ...</string>
     <string name="version_info">Copyright (C) 2014-2015 Yuneec.Inc. All Rights Reserved.</string>
     <string name="set_success">Set successfully</string>
     <string name="set_failed">Setup failed</string>
@@ -101,5 +103,13 @@
 	<string name="user_resource">User Resource</string>
 	<string name="study_manual">Study Manual</string>
 	
-
+	
+	<!-- Share -->
+	<string name="share_message">Message</string>
+	<string name="share_qq">QQ</string>
+	<string name="share_qzone">Qzone</string>
+	<string name="share_sina">WeiBo</string>
+	<string name="share_weixin">WeChat</string>
+	<string name="share_moments">Moments</string>
+	
 </resources>

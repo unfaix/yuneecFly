@@ -113,6 +113,15 @@
 	             <View style="@style/divider_line_style" />
 	             
 	             <TextView 
+	                android:id="@+id/bt_share"
+		            android:text="@string/share"
+		            style="@style/settings_options_style"
+		            />
+	             
+	             
+	             <View style="@style/divider_line_style" />
+	             
+	             <TextView 
 	                android:id="@+id/bt_about"
 		            android:text="@string/about"
 		            style="@style/settings_options_style"

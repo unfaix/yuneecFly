@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.widget.DrawerLayout;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
@@ -14,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -22,6 +25,7 @@ import com.yuneec.android.flyingexpert.R;
 import com.yuneec.android.flyingexpert.adapter.HueAdaper;
 import com.yuneec.android.flyingexpert.adapter.PhotoFormatAdaper;
 import com.yuneec.android.flyingexpert.adapter.ResolutionAdapter;
+import com.yuneec.android.flyingexpert.adapter.ShareAppAdapter;
 import com.yuneec.android.flyingexpert.base.BaseActivity;
 import com.yuneec.android.flyingexpert.library.AlertDialog;
 import com.yuneec.android.flyingexpert.library.ProgressDialog;
@@ -39,7 +43,6 @@ import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetAudioSwitchRequest;
 import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetHueRequest;
 import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetPhotoFormatRequest;
 import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetResolutionRequest;
-import com.yuneec.android.flyingexpert.util.StringUtils;
 
 
 /**
@@ -60,6 +63,7 @@ public class SettingsActivity extends BaseActivity{
 	private TextView bt_audio_settings;
 	private TextView bt_reset;
 	private TextView bt_format;
+	private TextView bt_share;
 	private TextView bt_about;
 	
 	private LinearLayout settings_container;
@@ -76,10 +80,14 @@ public class SettingsActivity extends BaseActivity{
 	private View view_audio;
 	private ShSwitchView sv_audio;
 	
-
+	private DrawerLayout dl_container;
+	private GridView gv_item;
+	
 	private ResolutionAdapter mResolutionAdapter;
 	private HueAdaper mHueAdaper;
 	private PhotoFormatAdaper mPhotoFormatAdaper;
+	
+	private ShareAppAdapter mShareAppAdapter;
 	
 	private static final List<String> resolution_group = new ArrayList<String>();
 	private static final List<List<String>> resolution_child = new ArrayList<List<String>>();
@@ -153,7 +161,7 @@ public class SettingsActivity extends BaseActivity{
 	@Override
 	protected void setContainer() {
 		getWindow().setFlags(WindowManager.LayoutParams. FLAG_FULLSCREEN , WindowManager.LayoutParams. FLAG_FULLSCREEN);
-		setContentView(R.layout.activity_settings);
+		setContentView(R.layout.activity_settings1);
 	}
 	
 	
@@ -568,6 +576,7 @@ public class SettingsActivity extends BaseActivity{
 		bt_audio_settings.setOnClickListener(this);
 		bt_reset.setOnClickListener(this);
 		bt_format.setOnClickListener(this);
+		bt_share.setOnClickListener(this);
 		bt_about.setOnClickListener(this);
 		
 		el_resolution.setOnChildClickListener(new MyOnResolutionChildClickListener());
@@ -602,11 +611,17 @@ public class SettingsActivity extends BaseActivity{
 		 mPhotoFormatAdaper = new PhotoFormatAdaper(getApplicationContext(), photo_format_list);
 		 lv_photo_format.setAdapter(mPhotoFormatAdaper);
 		 
+		 mShareAppAdapter = new ShareAppAdapter(getApplicationContext());
+		 gv_item.setAdapter(mShareAppAdapter);
+		 
 	}
 
 
 	private void initUIView() {
 		bt_finish = getView(R.id.bt_finish);
+		
+		dl_container = getView(R.id.dl_container);
+		gv_item = getView(R.id.gv_item);
 		
 		bt_resolution = getView(R.id.bt_resolution);
 		bt_hue = getView(R.id.bt_hue);
@@ -614,6 +629,7 @@ public class SettingsActivity extends BaseActivity{
 		bt_audio_settings = getView(R.id.bt_audio_settings);
 		bt_reset = getView(R.id.bt_reset);
 		bt_format = getView(R.id.bt_format);
+		bt_share = getView(R.id.bt_share);
 		bt_about = getView(R.id.bt_about);
 		
 		
@@ -680,6 +696,9 @@ public class SettingsActivity extends BaseActivity{
 			break;
 		case R.id.bt_format:
 			showFormatTipsDialog();
+			break;
+		case R.id.bt_share:
+			dl_container.openDrawer(Gravity.RIGHT);
 			break;
 		case R.id.bt_about:
 			startActivity(new Intent(getApplicationContext(),AboutActivity.class));
