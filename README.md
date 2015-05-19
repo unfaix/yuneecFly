@@ -90,4 +90,5 @@ This project is used to control the `UAV`. It has these functions, control of th
 ![](https://github.com/yongdaimi/yuneecFly/blob/yongdaimi/screenshot004.png)<br />
 
 ## Copyright
-![](ttps://github.com/yongdaimi/yuneecFly/blob/yongdaimi/res/drawable-hdpi/company.png)
+Copyright(C) 2015-2015 Yuneec.Inc.<br />
+![](https://github.com/yongdaimi/yuneecFly/blob/yongdaimi/res/drawable-hdpi/company.png)
