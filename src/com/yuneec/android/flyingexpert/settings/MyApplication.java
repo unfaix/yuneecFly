@@ -12,6 +12,8 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.decode.BaseImageDecoder;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
+import com.tencent.mm.sdk.openapi.IWXAPI;
+import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.yuneec.android.flyingexpert.entity.UserInfo;
 import com.yuneec.android.flyingexpert.util.CrashCollectionUtil;
 import com.yuneec.android.flyingexpert.util.SystemUtil;
@@ -38,7 +40,7 @@ public class MyApplication extends Application {
 	private UserInfo user = new UserInfo();
 	private LinkedList<Activity> mActivityList;
 	private Context context;
-	
+	private IWXAPI api;
 	
 	@Override
 	public void onCreate() {
@@ -47,10 +49,18 @@ public class MyApplication extends Application {
 		mActivityList = new LinkedList<Activity>();
 		context = getApplicationContext();
 	  	initCrash();
+	  	initWXAPI();
 	    initImageLoader();
 	}
 
 	
+	private void initWXAPI() {
+		api = WXAPIFactory.createWXAPI(context, AppConfig.APP_ID);
+		api.registerApp(AppConfig.APP_ID);
+	}
+
+	
+
 	/**
 	 * init crash
 	 */
@@ -146,6 +156,10 @@ public class MyApplication extends Application {
 	}
 	
 
+
+	public IWXAPI getApi() {
+		return api;
+	}
 
 	public Context getContext() {
 		return context;

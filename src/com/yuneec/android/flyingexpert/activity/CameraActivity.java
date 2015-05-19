@@ -471,7 +471,7 @@ public class CameraActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		initRequest();
-		initThreadPool();
+		// initThreadPool();
 		initSoundPool();
 	}
 	
@@ -1435,7 +1435,7 @@ public class CameraActivity extends BaseActivity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		mSingleThreadScheduledExecutor.shutdown();
+		// mSingleThreadScheduledExecutor.shutdown();
 		vv_scene.stopPlayback();
 	}
 

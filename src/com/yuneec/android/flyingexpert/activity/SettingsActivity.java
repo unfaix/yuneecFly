@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
@@ -43,6 +44,8 @@ import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetAudioSwitchRequest;
 import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetHueRequest;
 import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetPhotoFormatRequest;
 import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetResolutionRequest;
+import com.yuneec.android.flyingexpert.settings.MyApplication;
+import com.yuneec.android.flyingexpert.util.ShareUtil;
 
 
 /**
@@ -579,6 +582,8 @@ public class SettingsActivity extends BaseActivity{
 		bt_share.setOnClickListener(this);
 		bt_about.setOnClickListener(this);
 		
+		gv_item.setOnItemClickListener(this);
+		
 		el_resolution.setOnChildClickListener(new MyOnResolutionChildClickListener());
 		lv_hue.setOnItemClickListener(new MyHueOnItemClickListener());
 		lv_photo_format.setOnItemClickListener(new MyPhotoFormatOnItemClickListener());
@@ -713,7 +718,34 @@ public class SettingsActivity extends BaseActivity{
 
 
 	
-	
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		super.onItemClick(arg0, arg1, arg2, arg3);
+		switch (arg2) {
+		case 0:
+			
+			break;
+		case 1:
+			
+			break;
+		// weChat
+		case 2:
+			ShareUtil.share2WeChat(getApplicationContext(),MyApplication.getInstance().getApi());
+			break;
+		case 3:
+			ShareUtil.share2WeChatFriend(getApplicationContext(), MyApplication.getInstance().getApi());
+			break;
+		case 4:
+			
+			break;
+		case 5:
+			
+			break;
+
+		default:
+			break;
+		}
+	}
 	
 
 
@@ -1008,6 +1040,13 @@ public class SettingsActivity extends BaseActivity{
 	}
 	
 
+	private void closeDrawer() {
+		if (dl_container != null && dl_container.isDrawerOpen(Gravity.RIGHT)) {
+			dl_container.closeDrawers();
+		}
+	}
+	
+	
 	@Override
 	protected void addActivity() {
 		mApplication.addActivity(this);
@@ -1018,5 +1057,19 @@ public class SettingsActivity extends BaseActivity{
 		mProgressDialog = new ProgressDialog(this);
 	}
 
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		switch (keyCode) {
+		case KeyEvent.KEYCODE_BACK:
+			if (dl_container != null && dl_container.isDrawerOpen(Gravity.RIGHT)) {
+				dl_container.closeDrawers();
+				return false;
+			}
+		default:
+			break;
+		}
+		return super.onKeyDown(keyCode, event);
+	}
 
 }

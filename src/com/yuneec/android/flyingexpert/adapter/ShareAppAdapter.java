@@ -5,6 +5,7 @@ import com.yuneec.android.flyingexpert.R;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
@@ -91,6 +92,8 @@ public class ShareAppAdapter extends BaseAdapter {
 		ImageView iv_icon;
 		TextView tv_name;
 	}
+	
+	
 	
 
 }
