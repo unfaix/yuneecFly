@@ -33,17 +33,17 @@ import com.yuneec.android.flyingexpert.library.ProgressDialog;
 import com.yuneec.android.flyingexpert.library.ShSwitchView;
 import com.yuneec.android.flyingexpert.library.ShSwitchView.OnSwitchStateChangeListener;
 import com.yuneec.android.flyingexpert.logic.RequestKey;
-import com.yuneec.android.flyingexpert.logic.rtsp.RtspRequestManager;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.FormatSDcardRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.GetAudioSwitchRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.GetHueRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.GetPhotoFormatRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.GetResolutionRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.ResetSettingsRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetAudioSwitchRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetHueRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetPhotoFormatRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetResolutionRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.CGO3_RtspRequestManager;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.FormatSDcardRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.GetAudioSwitchRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.GetHueRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.GetPhotoFormatRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.GetResolutionRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.ResetSettingsRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.SetAudioSwitchRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.SetHueRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.SetPhotoFormatRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.SetResolutionRequest;
 import com.yuneec.android.flyingexpert.settings.MyApplication;
 import com.yuneec.android.flyingexpert.util.ShareUtil;
 
@@ -173,7 +173,7 @@ public class SettingsActivity extends BaseActivity{
 		
 		mSetResolutionRequest = new SetResolutionRequest();
 		mSetResolutionRequest.setVideoMode(mode);
-		RtspRequestManager.sendRequest(getApplicationContext(), mSetResolutionRequest, mHandler.obtainMessage(1));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mSetResolutionRequest, mHandler.obtainMessage(1));
 		
 	}
 	
@@ -183,7 +183,7 @@ public class SettingsActivity extends BaseActivity{
 		
 		mSetHueRequest = new SetHueRequest();
 		mSetHueRequest.setMode(hueValue);
-		RtspRequestManager.sendRequest(getApplicationContext(), mSetHueRequest, mHandler.obtainMessage(2));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mSetHueRequest, mHandler.obtainMessage(2));
 		
 	}
 	
@@ -192,7 +192,7 @@ public class SettingsActivity extends BaseActivity{
 		
 		mSetPhotoFormatRequest = new SetPhotoFormatRequest();
 		mSetPhotoFormatRequest.setValue(formatVal);
-		RtspRequestManager.sendRequest(getApplicationContext(), mSetPhotoFormatRequest, mHandler.obtainMessage(3));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mSetPhotoFormatRequest, mHandler.obtainMessage(3));
 		
 	}
 	
@@ -201,7 +201,7 @@ public class SettingsActivity extends BaseActivity{
 		
 		mSetAudioSwitchRequest = new SetAudioSwitchRequest();
 		mSetAudioSwitchRequest.setMode(mode);
-		RtspRequestManager.sendRequest(getApplicationContext(), mSetAudioSwitchRequest, mHandler.obtainMessage(4));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mSetAudioSwitchRequest, mHandler.obtainMessage(4));
 		
 	}
 	
@@ -210,7 +210,7 @@ public class SettingsActivity extends BaseActivity{
 	public void getResolutionRequest() {
 		
 		mGetResolutionRequest = new GetResolutionRequest();
-		RtspRequestManager.sendRequest(getApplicationContext(), mGetResolutionRequest, mHandler.obtainMessage(5));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mGetResolutionRequest, mHandler.obtainMessage(5));
 		
 	}
 	
@@ -220,7 +220,7 @@ public class SettingsActivity extends BaseActivity{
 	public void getHueRequest() {
 		
 		mGetHueRequest = new GetHueRequest();
-		RtspRequestManager.sendRequest(getApplicationContext(), mGetHueRequest, mHandler.obtainMessage(6));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mGetHueRequest, mHandler.obtainMessage(6));
 		
 	}
 	
@@ -229,7 +229,7 @@ public class SettingsActivity extends BaseActivity{
 	public void getPhotoFormatRequest() {
 		
 		mGetPhotoFormatRequest = new GetPhotoFormatRequest();
-		RtspRequestManager.sendRequest(getApplicationContext(), mGetPhotoFormatRequest, mHandler.obtainMessage(7));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mGetPhotoFormatRequest, mHandler.obtainMessage(7));
 		
 	}
 	
@@ -238,7 +238,7 @@ public class SettingsActivity extends BaseActivity{
 	public void getAudioSwitchRequest() {
 		
 		mGetAudioSwitchRequest = new GetAudioSwitchRequest();
-		RtspRequestManager.sendRequest(getApplicationContext(), mGetAudioSwitchRequest, mHandler.obtainMessage(8));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mGetAudioSwitchRequest, mHandler.obtainMessage(8));
 		
 	}
 	
@@ -246,7 +246,7 @@ public class SettingsActivity extends BaseActivity{
 	public void formatSDcardRequest() {
 		
 		mFormatSDcardRequest = new FormatSDcardRequest();
-		RtspRequestManager.sendRequest(getApplicationContext(), mFormatSDcardRequest, mHandler.obtainMessage(9));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mFormatSDcardRequest, mHandler.obtainMessage(9));
 		
 	}
 	
@@ -254,7 +254,7 @@ public class SettingsActivity extends BaseActivity{
 	public void resetSettingsRequest() {
 		
 		mResetSettingsRequest = new ResetSettingsRequest();
-		RtspRequestManager.sendRequest(getApplicationContext(), mResetSettingsRequest, mHandler.obtainMessage(10));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mResetSettingsRequest, mHandler.obtainMessage(10));
 		
 	}
 	

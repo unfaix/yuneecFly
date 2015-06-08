@@ -30,19 +30,19 @@ import com.yuneec.android.flyingexpert.library.AlertDialog;
 import com.yuneec.android.flyingexpert.library.Chronometer;
 import com.yuneec.android.flyingexpert.library.ProgressDialog;
 import com.yuneec.android.flyingexpert.logic.RequestKey;
-import com.yuneec.android.flyingexpert.logic.rtsp.RtspRequestManager;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.GetCurrentStatusRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.GetSDcardFreeRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.InitCameraRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetCameraModeRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetCurrentCameraModeRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetCurrentTimeRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetExposureValueRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetISORequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.SetWhiteBlanceRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.StartRecordRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.StopRecordRequest;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.TakePhotoRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.CGO3_RtspRequestManager;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.GetCurrentStatusRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.GetSDcardFreeRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.InitCameraRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.SetCameraModeRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.SetCurrentCameraModeRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.SetCurrentTimeRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.SetExposureValueRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.SetISORequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.SetWhiteBlanceRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.StartRecordRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.StopRecordRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.TakePhotoRequest;
 import com.yuneec.android.flyingexpert.util.LogX;
 import com.yuneec.android.flyingexpert.util.MathUtil;
 import com.yuneec.android.flyingexpert.library.wheelview.AbstractWheel;
@@ -172,7 +172,7 @@ public class CameraActivity extends BaseActivity {
 	
 	@Override
 	protected void setContainer() {
-		setContentView(R.layout.activity_camera1);
+		setContentView(R.layout.activity_camera);
 	}
 
 	
@@ -182,7 +182,8 @@ public class CameraActivity extends BaseActivity {
 		
 		 initUIView();
 		 initMenuView();
-		
+	
+		 
 	}
 
 
@@ -300,7 +301,7 @@ public class CameraActivity extends BaseActivity {
                 int currentItem = wheel.getCurrentItem();
                 LogX.i("test", "onScrollingFinished"+"wv_iso_value:current item is:"+currentItem);
                 iso_value = ISOAdapter.iso[currentItem];
-                setISORequest();
+                setISORequest(iso_value,shutterTime_value);
             }
 			
         };
@@ -346,7 +347,7 @@ public class CameraActivity extends BaseActivity {
                 int currentItem = wheel.getCurrentItem();
                 LogX.i("test", "onScrollingFinished"+"wv_shutter_time_value:current item is:"+currentItem);
                 shutterTime_value = ShutterTimeAdapter.iso[currentItem];
-                setISORequest();
+                setISORequest(iso_value,shutterTime_value);
             }
         };
 		
@@ -417,7 +418,7 @@ public class CameraActivity extends BaseActivity {
                 int currentItem = wheel.getCurrentItem();
                 LogX.i("test", "onScrollingFinished"+"wv_ev_value:current item is:"+currentItem);
                 ev_value = EVAdapter.iso[currentItem];
-        		setExposureValueRequest();
+        		setExposureValueRequest(ev_value);
             }
         };
 		
@@ -461,6 +462,7 @@ public class CameraActivity extends BaseActivity {
 		iv_home.setOnClickListener(this);
 		iv_album.setOnClickListener(this);
 		bt_shoot_or_take.setOnClickListener(this);
+		
 	}
 
 
@@ -471,7 +473,7 @@ public class CameraActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		initRequest();
-		// initThreadPool();
+		initThreadPool();
 		initSoundPool();
 	}
 	
@@ -532,36 +534,36 @@ public class CameraActivity extends BaseActivity {
 	private void initRequest() {
 		
 		mInitCameraRequest = new InitCameraRequest();
-		RtspRequestManager.sendRequest(getApplicationContext(), mInitCameraRequest, mHandler.obtainMessage(1));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mInitCameraRequest, mHandler.obtainMessage(1));
 		
 	}
 	
 	
 	
-	private void setWhiteBlanceRequest(int mode) {
+	public void setWhiteBlanceRequest(int mode) {
 		
 		mSetWhiteBlanceRequest = new SetWhiteBlanceRequest();
 		mSetWhiteBlanceRequest.setMode(mode);
-		RtspRequestManager.sendRequest(getApplicationContext(), mSetWhiteBlanceRequest, mHandler.obtainMessage(5));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mSetWhiteBlanceRequest, mHandler.obtainMessage(5));
 		
 	}
 	
 	
 
-	private void stopRecordRequest() {
+	public void stopRecordRequest() {
 		
 		mSoundPool.play(mVideoPauseSound, 1, 1, 0, 0, 1);
 		mStopRecordRequest = new StopRecordRequest();
-		RtspRequestManager.sendRequest(getApplicationContext(), mStopRecordRequest, mHandler.obtainMessage(2));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mStopRecordRequest, mHandler.obtainMessage(2));
 		
 	}
 	
 	
-	private void startRecordRequest() {
+	public void startRecordRequest() {
 		
 		mSoundPool.play(mVideoRecordSound, 1, 1, 0, 0, 1);
 		mStartRecordRequest = new StartRecordRequest();
-		RtspRequestManager.sendRequest(getApplicationContext(), mStartRecordRequest, mHandler.obtainMessage(3));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mStartRecordRequest, mHandler.obtainMessage(3));
 		
 	}
 	
@@ -569,35 +571,35 @@ public class CameraActivity extends BaseActivity {
 	private void getFreeSDcardRequest() {
 		
 		mGetSDcardFreeRequest = new GetSDcardFreeRequest();
-		RtspRequestManager.sendRequest(getApplicationContext(), mGetSDcardFreeRequest, mHandler.obtainMessage(4));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mGetSDcardFreeRequest, mHandler.obtainMessage(4));
 		
 	}
 	
 	
-	private void setExposureValueRequest() {
+	public void setExposureValueRequest(String value) {
 		
 		mSetExposureValueRequest = new SetExposureValueRequest();
-		mSetExposureValueRequest.setMode(ev_value);
-		RtspRequestManager.sendRequest(getApplicationContext(), mSetExposureValueRequest, mHandler.obtainMessage(6));
+		mSetExposureValueRequest.setMode(value);
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mSetExposureValueRequest, mHandler.obtainMessage(6));
 		
 	}
 	
 	
-	private void setISORequest() {
+	public void setISORequest(String iso_v, String shut_v) {
 		
 		mSetISORequest = new SetISORequest();
-		mSetISORequest.setIso(iso_value);
-		mSetISORequest.setShutterTime(shutterTime_value);
-		RtspRequestManager.sendRequest(getApplicationContext(), mSetISORequest, mHandler.obtainMessage(7));
+		mSetISORequest.setIso(iso_v);
+		mSetISORequest.setShutterTime(shut_v);
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mSetISORequest, mHandler.obtainMessage(7));
 		
 	}
 	
 	
-	private void setCameraModeRequest() {
+	public void setCameraModeRequest(int mode) {
 		
 		mSetCameraModeRequest = new SetCameraModeRequest();
-		mSetCameraModeRequest.setMode(aeMode);
-		RtspRequestManager.sendRequest(getApplicationContext(), mSetCameraModeRequest, mHandler.obtainMessage(8));
+		mSetCameraModeRequest.setMode(mode);
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mSetCameraModeRequest, mHandler.obtainMessage(8));
 		
 	}
 	
@@ -605,14 +607,14 @@ public class CameraActivity extends BaseActivity {
 	private void setCurrentTimeRequest() {
 		
 		mSetCurrentTimeRequest = new SetCurrentTimeRequest();
-		RtspRequestManager.sendRequest(getApplicationContext(), mSetCurrentTimeRequest, mHandler.obtainMessage(10));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mSetCurrentTimeRequest, mHandler.obtainMessage(10));
 		
 	}
 	
 	private void getCurrentStatusRequest() {
 		
 		mGetCurrentStatusRequest = new GetCurrentStatusRequest();
-		RtspRequestManager.sendRequest(getApplicationContext(), mGetCurrentStatusRequest, mHandler.obtainMessage(11));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mGetCurrentStatusRequest, mHandler.obtainMessage(11));
 		
 	}
 	
@@ -620,7 +622,7 @@ public class CameraActivity extends BaseActivity {
 	private void setCurrentCameraModeRequest(int mode) {
 		
 		mSetCurrentCameraModeRequest = new SetCurrentCameraModeRequest(mode);
-		RtspRequestManager.sendRequest(getApplicationContext(), mSetCurrentCameraModeRequest, mHandler.obtainMessage(12));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mSetCurrentCameraModeRequest, mHandler.obtainMessage(12));
 		
 	}
 	
@@ -630,7 +632,7 @@ public class CameraActivity extends BaseActivity {
 	/**
 	 * Take Photo
 	 */
-	private void takePhotoRequest() {
+	public void takePhotoRequest() {
 		
 		mSoundPool.play(mCameraClickSound, 1, 1, 0, 0, 1);
 		new HighlightAnimation(iv_scene)
@@ -645,7 +647,7 @@ public class CameraActivity extends BaseActivity {
 		cameraMode = 2;
 		mTakePhotoRequest = new TakePhotoRequest();
 		showProgressDialog(R.string.waiting);
-		RtspRequestManager.sendRequest(getApplicationContext(), mTakePhotoRequest, mHandler.obtainMessage(9));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(), mTakePhotoRequest, mHandler.obtainMessage(9));
 		
 	}
 	
@@ -1215,7 +1217,7 @@ public class CameraActivity extends BaseActivity {
 		case R.id.iv_iso_ev_mode:
 			aeMode = 0;
 			tv_shutter_time.setText(getString(R.string.manual));
-			setCameraModeRequest();
+			setCameraModeRequest(aeMode);
 			if (menu_sub_iso_ev.getVisibility() == View.VISIBLE) {
 				menu_sub_iso_ev.setVisibility(View.GONE);
 				menu_sub_iso_manual.setVisibility(View.VISIBLE);
@@ -1225,7 +1227,7 @@ public class CameraActivity extends BaseActivity {
 		case R.id.iv_iso_manual_mode:
 			aeMode = 1;
 			tv_shutter_time.setText(getString(R.string.auto));
-			setCameraModeRequest();
+			setCameraModeRequest(aeMode);
 			if (menu_sub_iso_manual.getVisibility() == View.VISIBLE) {
 				menu_sub_iso_manual.setVisibility(View.GONE);
 				menu_sub_iso_ev.setVisibility(View.VISIBLE);
@@ -1431,20 +1433,20 @@ public class CameraActivity extends BaseActivity {
 	}
 	
 	
-	
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-		// mSingleThreadScheduledExecutor.shutdown();
-		vv_scene.stopPlayback();
-	}
-
-
-
 	@Override
 	protected void initProgressDialog() {
 		mProgressDialog = new ProgressDialog(this);
 	}
 
+	
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		mSingleThreadScheduledExecutor.shutdown();
+		vv_scene.stopPlayback();
+	}
+
+	
 
 }

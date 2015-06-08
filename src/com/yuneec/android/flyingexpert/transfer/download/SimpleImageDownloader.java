@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 import com.yuneec.android.flyingexpert.entity.ResourceInfo;
 import com.yuneec.android.flyingexpert.library.ImageExportDialog;
-import com.yuneec.android.flyingexpert.logic.http.HttpRequest;
+import com.yuneec.android.flyingexpert.logic.comn.http.HttpRequest;
 
 public class SimpleImageDownloader{
 

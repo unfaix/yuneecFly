@@ -2,11 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yuneec.android.flyingexpert"
     android:versionCode="1"
-    android:versionName="0.1.0.0016" >
+    android:versionName="0.1.0.0021" >
 
     <uses-sdk
         android:minSdkVersion="16"
-        android:targetSdkVersion="20" />
+        android:targetSdkVersion="19" />
 
     
     <uses-permission android:name="android.permission.INTERNET" />
@@ -70,6 +70,12 @@
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
             />
         
+        <activity
+            android:name=".activity.SystemTestCameraActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" 
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            />
         
         <activity
             android:name=".activity.SettingsActivity"
@@ -107,6 +113,18 @@
             android:windowSoftInputMode="adjustPan" 
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
             />
+        
+        <activity
+            android:name=".activity.CGO4CameraActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" 
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            />
+        
+        <service 
+            android:name=".service.SystemAutoTestService"
+            android:label="@string/system_test_service"
+            ></service>
         
         
         <!-- <activity

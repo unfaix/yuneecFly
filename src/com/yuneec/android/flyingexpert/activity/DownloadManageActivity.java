@@ -28,7 +28,7 @@ import android.widget.VideoView;
 import com.yuneec.android.flyingexpert.R;
 import com.yuneec.android.flyingexpert.base.BaseActivity;
 import com.yuneec.android.flyingexpert.library.ProgressDialog;
-import com.yuneec.android.flyingexpert.logic.http.HttpRequest;
+import com.yuneec.android.flyingexpert.logic.comn.http.HttpRequest;
 import com.yuneec.android.flyingexpert.transfer.download.DownloadHelper;
 import com.yuneec.android.flyingexpert.transfer.download.Downloader;
 import com.yuneec.android.flyingexpert.transfer.download.adapter.DownloadAdapter;
@@ -106,6 +106,9 @@ public class DownloadManageActivity extends BaseActivity implements OnPauseListe
 
 	}
 
+	
+	
+	
 	
 	private class InitTask extends AsyncTask<List<String>, Void, Integer> {
 

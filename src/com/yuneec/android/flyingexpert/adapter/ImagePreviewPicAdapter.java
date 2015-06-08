@@ -17,7 +17,7 @@ import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.yuneec.android.flyingexpert.R;
 import com.yuneec.android.flyingexpert.base.BaseListAdapter;
 import com.yuneec.android.flyingexpert.entity.ResourceInfo;
-import com.yuneec.android.flyingexpert.logic.http.HttpRequest;
+import com.yuneec.android.flyingexpert.logic.comn.http.HttpRequest;
 
 
 public class ImagePreviewPicAdapter extends BaseListAdapter<ResourceInfo> {

@@ -21,5 +21,11 @@ public interface ConstantValue {
 	int PROMPT_PROGRESS_CLOSE = 1;
 	
 	
+	String AGENTERID = "1000002";
+	
+	String SOURCE = "ivr";
+	
+	String COMPRESS = "DES";
+	
 	
 }
