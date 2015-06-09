@@ -1,9 +1,10 @@
-package com.yuneec.android.flyingexpert.activity;
+package com.yuneec.android.flyingexpert.activity.cgo4;
 
 import tv.danmaku.ijk.media.widget.VideoView;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.View;
 
 import com.yuneec.android.flyingexpert.R;
 import com.yuneec.android.flyingexpert.base.BaseActivity;
@@ -14,43 +15,14 @@ import com.yuneec.android.flyingexpert.logic.cgo4.rtsp.impl.SetMicrophoneVolumeR
 public class CGO4CameraActivity extends BaseActivity {
 
 	
+	
 	private static final String mVideoPath = "rtsp://192.168.73.254:8557/PSIA/Streaming/channels/2?videoCodecType=H.264";
 	
 	
+	
 	private VideoView vv_scene;
-	private SetMicrophoneVolumeRequest mSetMicrophoneVolumeRequest;
 	
 	
-	
-	
-	
-	private void setMicrophoneVolumeRequest() {
-		
-		mSetMicrophoneVolumeRequest = new SetMicrophoneVolumeRequest();
-		CGO4_RtspRequestManager.sendRequest(getApplicationContext(), mSetMicrophoneVolumeRequest,
-				mHandler.obtainMessage(1));
-		
-	}
-	
-	
-	
-	private Handler mHandler = new Handler() {
-
-		@Override
-		public void handleMessage(Message msg) {
-			super.handleMessage(msg);
-			switch (msg.what) {
-			case 1:
-				
-				break;
-
-			default:
-				break;
-			}
-		}
-		
-		
-	};
 	
 	
 	@Override
@@ -69,17 +41,18 @@ public class CGO4CameraActivity extends BaseActivity {
 
 	@Override
 	protected void setListener() {
-		// TODO Auto-generated method stub
-
+		
 	}
 
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		updateVideoViewStatus();
-		setMicrophoneVolumeRequest();
 	}
+	
+	
 	
 	
 	
@@ -90,6 +63,7 @@ public class CGO4CameraActivity extends BaseActivity {
 		vv_scene.start();
 	
 	}
+	
 	
 	
 	

@@ -9,6 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.yuneec.android.flyingexpert.R;
+import com.yuneec.android.flyingexpert.activity.cgo4.CGO4CameraActivity;
 import com.yuneec.android.flyingexpert.base.BaseActivity;
 import com.yuneec.android.flyingexpert.library.DynamicWeatherCloudyView;
 import com.yuneec.android.flyingexpert.library.ProgressDialog;

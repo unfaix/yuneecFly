@@ -8,20 +8,22 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import android.util.Xml;
 
-import com.yuneec.android.flyingexpert.logic.cgo4.rtsp.CGO4RTSPcommand;
 import com.yuneec.android.flyingexpert.logic.cgo4.rtsp.CGO4_RtspRequest;
 import com.yuneec.android.flyingexpert.util.LogX;
 
-public class SetMicrophoneVolumeRequest extends CGO4_RtspRequest {
+/**
+ * *******************************************************************************
+ * Init Request
+ * @Author yongdaimi
+ * @Remark 
+ * @Date Jun 9, 2015 11:16:32 AM
+ * @Company Copyright (C) 2014-2015 Yuneec.Inc. All Rights Reserved.
+ ********************************************************************************
+ */
+public class InitRequest extends CGO4_RtspRequest {
 
 	
-	private String time = "";
 	
-	private String whiteBlance;
-	
-	
-
-
 	@Override
 	public void createRequestBody() throws XmlPullParserException, IOException {
 		LogX.i("test_send", "current request is : "+getClass().getSimpleName());
@@ -41,14 +43,11 @@ public class SetMicrophoneVolumeRequest extends CGO4_RtspRequest {
 			case XmlPullParser.START_TAG:
 				name = parser.getName();
 				if ("result".equalsIgnoreCase(name)) {
-					if (parser.nextText().equals("ok")) {
-						resultCode = 0;
-					} else {
-						resultCode = -1;
+					if (!parser.nextText().equals("ok")) {
+						return;
 					}
 				}
 				
-				// TODO something...
 				break;
 			default:
 				break;
@@ -59,16 +58,10 @@ public class SetMicrophoneVolumeRequest extends CGO4_RtspRequest {
 	}
 
 	
-	
-	
-	public String getTime() {
-		return time;
-	}
-
 
 	@Override
 	public String getUrl() {
-		return BASE_URL+CGO4RTSPcommand.SET_WHITE_BALANCE.cmd()+whiteBlance;
+		return "http://192.168.54.1/cam.cgi?mode=setsetting&type=mic_level&value=-12dB";
 	}
 	
 }

@@ -115,7 +115,14 @@
             />
         
         <activity
-            android:name=".activity.CGO4CameraActivity"
+            android:name=".activity.cgo4.CGO4CameraActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan" 
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            />
+        
+        <activity
+            android:name=".activity.cgo4.CGO4SettingsActivity"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="adjustPan" 
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
