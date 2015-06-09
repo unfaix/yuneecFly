@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="current_system_status">当前系统状态：</string>
+    <string name="start_test">开始测试</string>
+    <string name="end_test">终止录像</string>
+    <string name="format_sdcard">格式化T卡</string>
+    <string name="confirm_format">Yes,I want</string>
+    <string name="cancel_format">No,I give up</string>
+    <string name="format_sdcard_tips">注意 ! 此操作仅能在测试停止或未开始前调用，若测试服务正在进行，调用此方法会干扰测试流程，确定格式化？</string>
+    <string name="stop_record_tips">终止录像功能只能在系统发生故障,录像无法终止的情况下使用,若测试正常运行,请不要非法终止！</string>
+     <string name="stop_test_tips">如要终止测试,退出当前应用程序即可</string>
+    <string name="record_length">本次录像时长：</string>
+    <string name="current_resolution">当前系统分辨率：</string>
+    <string name="can_not_click">Please not repeat click</string>
+    
+    
+</resources>

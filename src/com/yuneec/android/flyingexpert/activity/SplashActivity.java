@@ -11,8 +11,8 @@ import com.yuneec.android.flyingexpert.base.BaseActivity;
 import com.yuneec.android.flyingexpert.entity.UserInfo;
 import com.yuneec.android.flyingexpert.library.ProgressDialog;
 import com.yuneec.android.flyingexpert.logic.RequestKey;
-import com.yuneec.android.flyingexpert.logic.http.HttpRequestManager;
-import com.yuneec.android.flyingexpert.logic.http.impl.CheckUpdateRequest;
+import com.yuneec.android.flyingexpert.logic.comn.http.HttpRequestManager;
+import com.yuneec.android.flyingexpert.logic.comn.http.impl.CheckUpdateRequest;
 
 
 

@@ -41,7 +41,7 @@ import com.yuneec.android.flyingexpert.entity.ResourceInfo;
 import com.yuneec.android.flyingexpert.library.AlertDialog;
 import com.yuneec.android.flyingexpert.library.ImageExportDialog;
 import com.yuneec.android.flyingexpert.library.ProgressDialog;
-import com.yuneec.android.flyingexpert.logic.http.HttpRequest;
+import com.yuneec.android.flyingexpert.logic.comn.http.HttpRequest;
 import com.yuneec.android.flyingexpert.transfer.download.DownloadHelper;
 import com.yuneec.android.flyingexpert.transfer.download.Downloader;
 import com.yuneec.android.flyingexpert.transfer.download.SimpleImageDownloader;

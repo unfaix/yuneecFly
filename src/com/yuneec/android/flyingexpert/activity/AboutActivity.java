@@ -4,8 +4,8 @@ import com.yuneec.android.flyingexpert.R;
 import com.yuneec.android.flyingexpert.base.BaseActivity;
 import com.yuneec.android.flyingexpert.library.ProgressDialog;
 import com.yuneec.android.flyingexpert.logic.RequestKey;
-import com.yuneec.android.flyingexpert.logic.rtsp.RtspRequestManager;
-import com.yuneec.android.flyingexpert.logic.rtsp.impl.GetVersionRequest;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.CGO3_RtspRequestManager;
+import com.yuneec.android.flyingexpert.logic.cgo3.rtsp.impl.GetVersionRequest;
 import com.yuneec.android.flyingexpert.util.SystemUtil;
 
 import android.os.Bundle;
@@ -15,11 +15,13 @@ import android.view.View;
 import android.widget.TextView;
 
 /**
- * About UI
- * @author yongdaimi
- * @remark
- * @date 2014-11-9 下午04:45:41
- * @company Copyright (C) PaoPao.Inc. All Rights Reserved.
+ * *******************************************************************************
+ * AboutActivity
+ * @Author yongdaimi
+ * @Remark 
+ * @Date 2015-6-1 上午10:09:17
+ * @Company Copyright (C) 2014-2015 Yuneec.Inc. All Rights Reserved.
+ ********************************************************************************
  */
 public class AboutActivity extends BaseActivity {
 
@@ -68,7 +70,7 @@ public class AboutActivity extends BaseActivity {
 	public void getVersionRequest() {
 
 		mGetVersionRequest = new GetVersionRequest();
-		RtspRequestManager.sendRequest(getApplicationContext(),mGetVersionRequest, mHandler.obtainMessage(1));
+		CGO3_RtspRequestManager.sendRequest(getApplicationContext(),mGetVersionRequest, mHandler.obtainMessage(1));
 
 	}
 

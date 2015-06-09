@@ -23,7 +23,7 @@ import com.yuneec.android.flyingexpert.R;
 import com.yuneec.android.flyingexpert.base.BaseActivity;
 import com.yuneec.android.flyingexpert.entity.ResourceInfo;
 import com.yuneec.android.flyingexpert.library.ProgressDialog;
-import com.yuneec.android.flyingexpert.logic.http.HttpRequest;
+import com.yuneec.android.flyingexpert.logic.comn.http.HttpRequest;
 
 /**
  * ****************************************************************

@@ -112,4 +112,7 @@
 	<string name="share_weixin">WeChat</string>
 	<string name="share_moments">Moments</string>
 	
+	<!-- Test -->
+	<string name="system_test_service">YuneecFly_SystemTestService</string>
+	
 </resources>

@@ -3,8 +3,6 @@ package com.yuneec.android.flyingexpert.activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -72,7 +70,8 @@ public class MainActivity extends BaseActivity {
 			startActivity(new Intent(getApplicationContext(),CameraActivity.class));
 			break;
 		case R.id.tv_study:
-			showToast(R.string.building);
+//			showToast(R.string.building);
+			startActivity(new Intent(getApplicationContext(),CGO4CameraActivity.class));
 			break;
 		case R.id.tv_resource:
 			startActivity(new Intent(getApplicationContext(),ImagePreviewActivity.class));
