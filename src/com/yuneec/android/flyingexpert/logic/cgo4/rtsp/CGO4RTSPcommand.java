@@ -12,6 +12,81 @@ package com.yuneec.android.flyingexpert.logic.cgo4.rtsp;
 public enum CGO4RTSPcommand {
 
 	
+	/******************************  Settings UI Command	**********************************/
+	
+	/** AFmode */
+	GET_AFMODE("getsetting","afmode",false),
+	SET_AFMODE("setsetting","afmode",false),
+	
+	/** Color mode */
+	GET_COLOR_MODE("getsetting","colormode",false),
+	SET_COLOR_MODE("setsetting","colormode",false),
+	
+	/** Aspectratio */
+	GET_ASPECTRATIO("getsetting","aspectratio",false),
+	SET_ASPECTRATIO("setsetting","aspectratio",false),
+	
+	/** Pictsize */
+	GET_PICTSIZE("getsetting","pictsize",false),
+	SET_PICTSIZE ("setsetting","pictsize",false),
+	
+	/** Qualitiy */
+	GET_QUALITIY("getsetting","quality",false),
+	SET_QUALITIY("setsetting","quality",false),
+	
+	/** Focus Mode */
+	GET_FOCUS_MODE("getsetting","focusmode",false),
+	SET_FOCUS_MODE("setsetting","focusmode",false),
+	
+	/** Lightmet */
+	GET_LIGHTMET("getsetting","lightmetering",false),
+	SET_LIGHTMET("setsetting","lightmetering",false),
+	
+	/** Video Format */
+	GET_VIDEOFORMAT("getsetting","lightmetering",false),
+	SET_VIDEOFORMAT("setsetting","lightmetering",false),
+	
+	/** Video Quality */
+	GET_VIDEOQUALITY("getsetting","videoquality",false),
+	SET_VIDEOQUALITY("setsetting","videoquality",false),
+	
+	/** System Frequency */
+	GET_SYSTEM_FREQUENCY("getsetting","system_freq",false),
+	SET_SYSTEM_FREQUENCY("setsetting","system_freq",false),
+	
+	/** Mic Level */
+	GET_MIC_LEVEL("getsetting","mic_level",false),
+	SET_MIC_LEVEL("setsetting","mic_level",false),
+	
+	/** Drive Mode */
+	GET_DRIVE_MODE("getsetting","drivemode",false),
+	SET_DRIVE_MODE("setsetting","drivemode",false),
+	
+	/** Brust */
+	GET_BRUST("getsetting","burst_speed",false),
+	SET_BRUST("setsetting","burst_speed",false),
+	
+	/** Self Timer */
+	GET_SELF_TIMER("getsetting","selftimer",false),
+	SET_SELF_TIMER("setsetting","selftimer",false),
+	
+	/** Autobracket */
+	GET_AUTOBRACKET("getsetting","auto_bracket",false),
+	SET_AUTOBRACKET("setsetting","auto_bracket",false),
+	
+	/** Peeking */
+	GET_PEEKING("getsetting","peaking",false),
+	SET_PEEKING("setsetting","peaking",false),
+	
+	/** Format SDcard*/
+	FORMAT_SDCARD("editcmd","format","sd"),
+	
+	/** Reset Arguments*/
+	RESET_ARGUS("setsetting","systemmenu","reset"),
+	
+	/******************************  Settings UI Command	**********************************/
+	
+	
 	/** Get Microphone Volume*/
 	GET_MICROPHONE_VOLUME("getsetting","mic_level",false),
 	
@@ -27,14 +102,8 @@ public enum CGO4RTSPcommand {
 	/** Stop Record*/
 	STOP_RECORD("camcmd","video_recstop",true),
 	
-	/** Reset Arguments*/
-	RESET_ARGUS("setsetting","systemmenu","reset"),
-	
 	/** Set Time*/
 	SET_TIME("setsetting","clock",false),
-	
-	/** Format SDcard*/
-	FORMAT_SDCARD("editcmd","format","sd"),
 	
 	/** Get Format Process*/
 	GET_FORMAT_PROCESS("getprogress","format",false),
