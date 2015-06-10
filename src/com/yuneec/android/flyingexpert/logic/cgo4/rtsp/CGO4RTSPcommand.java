@@ -66,8 +66,8 @@ public enum CGO4RTSPcommand {
 	/** Stop Focus Change*/
 	STOP_FOCUS_CHANGE("camcmd","zoomstop",true),
 	
-	/** Set Recording Mode*/
-	SET_RECORDING_MODE("camcmd","recmode",true),
+	/** INIT*/
+	INIT("camcmd","recmode",true),
 	
 	/** Programe Shift Entry*/
 	PROGRAME_SHIFT_ENTRY("camctrl","program_shift","entry"),
